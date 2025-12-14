@@ -1,0 +1,137 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+group = 'com.financeapp'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'commons-io:commons-io:2.14.0'
+    implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
+    implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
+    implementation 'org.apache.poi:poi:5.3.0'
+    implementation 'org.apache.poi:poi-ooxml:5.3.0'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'org.openjfx:javafx-controls:21'
+    implementation 'org.openjfx:javafx-fxml:21'
+}
+
+javafx {
+    version = "21.0.3"
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+
+application {
+    mainClass = 'finance.app.MainFX'
+}
+
+tasks.named('run').configure {
+    standardInput = System.in
+    workingDir = projectDir
+    environment('JAVA_TOOL_OPTIONS', '-Dfile.encoding=UTF8')
+
+    jvmArgs = [
+            '--add-modules', 'javafx.controls,javafx.fxml',
+            '--add-reads', 'java.base/sun.nio.ch=ALL-UNNAMED',
+            '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+            '--add-opens', 'java.base/jdk.internal.loader=ALL-UNNAMED',
+            '--add-opens', 'java.base/java.util=ALL-UNNAMED',
+            '-Dfile.encoding=UTF-8'
+    ]
+}
+
+javadoc {
+    options.encoding = 'UTF-8'
+    options.charSet = 'UTF-8'
+    options.addStringOption('Xdoclint:none', '-quiet')
+    title = "Personal Expense Tracker Documentation"
+    options.author = true
+    options.version = true
+    options.links(
+            'https://docs.oracle.com/en/java/javase/21/docs/api/'
+    )
+}
+
+task generateDocs(type: Javadoc) {
+    source = sourceSets.main.allJava
+    classpath = configurations.compileClasspath
+    destinationDir = file("$buildDir/docs/javadoc")
+    options.encoding = 'UTF-8'
+    options.charSet = 'UTF-8'
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.links(
+            'https://docs.oracle.com/en/java/javase/21/docs/api/'
+    )
+}
+
+task cleanDocs(type: Delete) {
+    delete "$buildDir/docs/javadoc"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'finance.app.Main'
+        )
+    }
+
+    from {
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    exclude 'META-INF/**'
+
+    archiveFileName = 'ExpenseTracker.jar'
+}
+
+
+task createDistribution(type: Copy) {
+    from jar
+    from configurations.runtimeClasspath
+    into "$buildDir/distribution"
+
+    doLast {
+        def scriptsDir = file("$buildDir/distribution/scripts")
+        scriptsDir.mkdirs()
+
+        def batContent = """
+@echo off
+setlocal
+set JAVA_OPTS=-Dfile.encoding=UTF-8
+java %JAVA_OPTS% -jar "%~dp0..\\ExpenseTracker.jar" %*
+        """
+        file("$scriptsDir/ExpenseTracker.bat").text = batContent
+
+        def shContent = """
+#!/bin/bash
+JAVA_OPTS="-Dfile.encoding=UTF-8"
+java \$JAVA_OPTS -jar "\$(dirname "\$0")/../ExpenseTracker.jar" "\$@"
+        """
+        def shFile = file("$scriptsDir/ExpenseTracker.sh")
+        shFile.text = shContent
+        shFile.setExecutable(true)
+    }
+}
+
+task buildExecutable {
+    dependsOn jar, createDistribution
+}
+

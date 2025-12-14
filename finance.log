@@ -1,0 +1,69 @@
+2025-12-07 16:54:31 [main] INFO  finance.app.Main - Тестовая запись лога
+2025-12-07 17:11:07 [main] INFO  finance.app.Main - Application started
+2025-12-07 17:11:07 [main] ERROR finance.app.Main - Error in main menu
+java.util.NoSuchElementException: null
+	at java.util.Scanner.throwFor(Scanner.java:937) ~[?:?]
+	at java.util.Scanner.next(Scanner.java:1594) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2258) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2212) ~[?:?]
+	at finance.app.Main.showMainMenu(Main.java:41) [main/:?]
+	at finance.app.Main.main(Main.java:25) [main/:?]
+2025-12-07 17:17:38 [main] INFO  finance.app.Main - Application started
+2025-12-07 17:36:53 [main] INFO  finance.service.ExpenseManager - Added new expense: Expense: $5000.00, Category: Public Transport, Date: 2025-12-07, Description: No description
+2025-12-07 17:37:00 [main] INFO  finance.app.Main - Application terminated by user
+2025-12-08 13:42:20 [main] INFO  finance.app.Main - Application started
+2025-12-08 13:42:44 [main] INFO  finance.app.Main - Application terminated by user
+2025-12-08 13:43:49 [main] INFO  finance.app.Main - Application started
+2025-12-08 13:46:52 [main] INFO  finance.service.ExpenseManager - Added new expense: Expense: $450.00, Category: Education, Date: 2025-12-08, Description: No description
+2025-12-08 13:49:00 [main] INFO  finance.service.ExpenseManager - Added new expense: Expense: $23.00, Category: Charity, Date: 2025-12-08, Description: No description
+2025-12-08 13:49:24 [main] INFO  finance.service.ExcelExporter - Created export directory: C:\Users\yon\IdeaProjects\financeapp\exports
+2025-12-08 13:49:24 [main] INFO  finance.service.ExcelExporter - Successfully exported 2 expenses to exports/all_expenses_2025-12-08_13-49-24.xlsx
+2025-12-08 14:15:24 [main] INFO  finance.app.Main - Application terminated by user
+2025-12-08 14:15:52 [main] INFO  finance.app.Main - Application started
+2025-12-08 14:16:10 [main] INFO  finance.service.ExpenseManager - Added new expense: Expense: $56.00, Category: Utilities, Date: 2025-12-08, Description: No description
+2025-12-08 14:52:10 [main] INFO  finance.app.Main - Application terminated by user
+2025-12-08 14:52:45 [main] INFO  finance.app.Main - Application started
+2025-12-08 14:53:04 [main] INFO  finance.service.ExpenseManager - Added new expense: Expense: 54.10 ₽, Category: Car, Date: 2025-12-08, Description: No description
+2025-12-08 14:53:14 [main] INFO  finance.service.ExpenseManager - Added new expense: Expense: 66.00 ₽, Category: Taxi, Date: 2025-12-08, Description: No description
+2025-12-08 14:55:19 [main] INFO  finance.app.Main - Application terminated by user
+2025-12-08 14:55:23 [main] INFO  finance.app.Main - Application started
+2025-12-08 14:55:29 [main] INFO  finance.service.ExpenseManager - Added new expense: Expense: 56.00 rub., Category: Cafe and Restaurants, Date: 2025-12-08, Description: No description
+2025-12-08 14:55:37 [main] INFO  finance.service.ExpenseManager - Added new expense: Expense: 34.00 rub., Category: Clothes and Shoes, Date: 2025-12-08, Description: No description
+2025-12-08 14:55:50 [main] INFO  finance.service.ExcelExporter - Successfully exported 2 expenses to exports/all_expenses_08-12-2025_14-55-49.xlsx
+2025-12-08 15:30:56 [main] INFO  finance.app.Main - Application terminated by user
+2025-12-08 15:31:09 [main] INFO  finance.app.Main - Application started
+2025-12-08 15:31:21 [main] INFO  finance.service.ExpenseManager - Added new expense: Expense: 25.00 rub., Category: Taxi, Date: 2025-12-08, Description: No description
+2025-12-08 15:31:33 [main] INFO  finance.service.ExpenseManager - Added new expense: Expense: 323.00 rub., Category: Public Transport, Date: 2025-12-08, Description: No description
+2025-12-08 15:31:40 [main] ERROR finance.app.Main - Error in export menu
+java.util.InputMismatchException: null
+	at java.util.Scanner.throwFor(Scanner.java:939) ~[?:?]
+	at java.util.Scanner.next(Scanner.java:1594) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2258) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2212) ~[?:?]
+	at finance.app.Main.exportToExcel(Main.java:236) [main/:?]
+	at finance.app.Main.showMainMenu(Main.java:75) [main/:?]
+	at finance.app.Main.main(Main.java:26) [main/:?]
+2025-12-08 15:31:53 [main] INFO  finance.service.ExcelExporter - Successfully exported 2 expenses to exports/all_expenses_08-12-2025_15-31-52.xlsx
+2025-12-08 15:40:51 [main] INFO  finance.app.Main - Application terminated by user
+2025-12-08 15:41:02 [main] INFO  finance.app.Main - Application started
+2025-12-08 15:41:07 [main] INFO  finance.service.ExpenseManager - Added new expense: Expense: 45.00 rub., Category: Public Transport, Date: 2025-12-08, Description: No description
+2025-12-08 15:41:12 [main] INFO  finance.service.ExpenseManager - Added new expense: Expense: 45.00 rub., Category: Clothes and Shoes, Date: 2025-12-08, Description: No description
+2025-12-08 15:41:22 [main] INFO  finance.service.ExcelExporter - Successfully exported 2 expenses to exports/all_expenses_08122025_154121.xlsx
+2025-12-08 15:52:06 [main] INFO  finance.app.Main - Application terminated by user
+2025-12-08 15:52:17 [main] INFO  finance.app.Main - Application started
+2025-12-08 15:52:29 [main] INFO  finance.service.ExpenseManager - Added new expense: 56.0 руб. in category Sport and Fitness
+2025-12-08 15:52:36 [main] INFO  finance.service.ExcelExporter - Successfully exported 1 expenses to exports/all_expenses_2025-12-08_15-52-36.xlsx
+2025-12-11 01:00:31 [main] INFO  finance.app.Main - Application started
+2025-12-11 01:24:22 [main] INFO  finance.app.Main - Application started
+2025-12-11 02:32:55 [main] INFO  finance.app.Main - Application terminated by user
+2025-12-11 23:03:24 [JavaFX Application Thread] INFO  finance.service.ExpenseManager - Added new expense: 78.0 руб. in category Taxi
+2025-12-11 23:03:34 [JavaFX Application Thread] INFO  finance.service.ExpenseManager - Added new expense: 87.0 руб. in category Cafe and Restaurants
+2025-12-11 23:03:51 [JavaFX Application Thread] INFO  finance.service.ExpenseManager - Added new expense: 866.0 руб. in category Charity
+2025-12-11 23:04:01 [JavaFX Application Thread] INFO  finance.service.ExpenseManager - Added new expense: 7686.0 руб. in category Public Transport
+2025-12-11 23:07:25 [JavaFX Application Thread] INFO  finance.service.ExcelExporter - Successfully exported 4 expenses to exports/all_expenses_2025-12-11_23-07-25.xlsx
+2025-12-13 15:05:59 [JavaFX Application Thread] INFO  finance.service.ExpenseManager - Added new expense: 4352.0 руб. in category Cafe and Restaurants
+2025-12-13 15:06:07 [JavaFX Application Thread] INFO  finance.service.ExpenseManager - Added new expense: 33535.0 руб. in category Electronics
+2025-12-13 16:30:37 [JavaFX Application Thread] INFO  finance.service.ExpenseManager - Added new expense: 6776.0 руб. in category Taxi
+2025-12-13 16:30:40 [JavaFX Application Thread] INFO  finance.service.ExcelExporter - Successfully exported 1 expenses to exports/all_expenses_2025-12-13_16-30-39.xlsx
+2025-12-13 16:31:43 [JavaFX Application Thread] INFO  finance.service.ExpenseManager - Added new expense: 466.0 руб. in category Cafe and Restaurants
+2025-12-13 16:31:47 [JavaFX Application Thread] INFO  finance.service.ExcelExporter - Successfully exported 1 expenses to exports/all_expenses_2025-12-13_16-31-46.xlsx
