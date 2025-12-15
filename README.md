@@ -11,7 +11,7 @@ https://github.com/rimkittizz/expensetracker.git
 ./gradlew run
 ## Консольная версия
 ### Сборка jar-файла
-.\gradlew clean jar
+./gradlew clean jar
 ### Запуск jar-файла через консоль
 java -jar build\libs\ExpenseTracker.jar
 ## Генерация JavaDoc документации
