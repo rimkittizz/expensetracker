@@ -67,3 +67,5 @@ java.util.InputMismatchException: null
 2025-12-13 16:30:40 [JavaFX Application Thread] INFO  finance.service.ExcelExporter - Successfully exported 1 expenses to exports/all_expenses_2025-12-13_16-30-39.xlsx
 2025-12-13 16:31:43 [JavaFX Application Thread] INFO  finance.service.ExpenseManager - Added new expense: 466.0 руб. in category Cafe and Restaurants
 2025-12-13 16:31:47 [JavaFX Application Thread] INFO  finance.service.ExcelExporter - Successfully exported 1 expenses to exports/all_expenses_2025-12-13_16-31-46.xlsx
+2025-12-15 13:27:21 [main] INFO  finance.app.Main - Application started
+2025-12-15 13:28:19 [main] INFO  finance.app.Main - Application terminated by user
